@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <!-- Enter monthly income -->
+        <div class="section d-flex p-3 rounded mx-3 justify-content-center">
+            <label for="startingIncome">Enter your monthly income: </label>
+            <input name="startingIncome" type="number" id="startingIncome"><input type="button" class="button" value="Submit" onclick="setIncome()">
+            
+
+            <!-- <span id="budgetDollar_NumberOutput"></span> -->
+        </div>
+
+
+    <!----------------- FOOD ------------------->
+        <div class="category">
+            <!-- Enter budget % amount alloted on food-->
+            <div class="title"><h2>Food</h2></div>
+            <div>
+                <h3>Budget in Percent</h3>
+                <label for="foodPercent_UserInput">Enter percentage from 0 to 100:</label>
+                <input name="foodPercent_UserInput" type="number" id="foodPercent_UserInput" class="inputText rounded">
+                <input type="button" class="button" value="Calculate" onclick="percToDollar(food)">
+                
+
+            </div>
+            
+            <div>
+                <h3>Budget in Dollars </h3>
+                <div class="dollarOutputs rounded" >
+                    <p id="foodDollar_Output"></p>
+                </div>
+            </div>
+
+            <!-- Enter Actual amount spent on food-->
+            <div>
+                <h3>Total Spent</h3>
+                <label for="foodSpent_UserInput">Enter amount spent this month: </label>
+                <div class="checkSpentResult">
+                    <input name="foodSpent_UserInput" type="number" id="foodSpent_UserInput" class="inputText rounded">
+                    <img src="media/bar.svg" alt="arrow showing either up or down or neutral" width="50" id="arrowImgFood">
+                    <p id="aboveBelowFood">Above or Below?</p>
+                </div>
+                
+                <input type="button" class="button" value="Check" onclick="checkSpent(food)">
+                
+            </div>
+        </div>
+
+    <!----------------- RENT ------------------->
+        <div class="category">
+            <!-- Enter budget % amount alloted on rent-->
+            <div class="title"><h2>Rent</h2></div>
+            <div>
+                <h3>Budget in Percent</h3>
+                <label for="rentPercent_UserInput">Enter percentage from 0 to 100:</label>
+                <input name="rentPercent_UserInput" type="number" id="rentPercent_UserInput" class="inputText rounded">
+                <input type="button" class="button" value="Calculate" onclick="percToDollar(rent)">
+                
+
+            </div>
+            <div>
+                <h3>Budget in Dollars </h3>
+                <div class="dollarOutputs rounded" >
+                    <p id="rentDollar_Output"></p>
+                </div>
+            </div>
+
+            <!-- Enter Actual amount spent on rent-->
+            <div>
+                <h3>Total Spent</h3>
+                <label for="rentSpent_UserInput">Enter amount spent this month: </label>
+                <div class="checkSpentResult">
+                    <input name="rentSpent_UserInput" type="number" id="rentSpent_UserInput" class="inputText rounded">
+                    <img src="media/bar.svg" alt="arrow showing either up or down or neutral" width="50" id="arrowImgRent">
+                    <p id="aboveBelowRent">Above or Below?</p>
+                </div>
+                <input type="button" class="button" value="Check" onclick="checkSpent(rent)">
+
+                <span id="rentSpent_Output"></span>
+            </div>
+        </div>
+
+    <!----------------- TRANSPORTATION ------------------->
+        <div class="category">
+            <!-- Enter budget % amount alloted on transportation-->
+            <div class="title"><h2>Transportation</h2></div>
+            <div>
+                <h3>Budget in Percent</h3>
+                <label for="travelPercent_UserInput">Enter percentage from 0 to 100:</label>
+                <input name="travelPercent_UserInput" type="number" id="travelPercent_UserInput" class="inputText rounded">
+                <input type="button" class="button" value="Calculate" onclick="percToDollar(travel)">
+                
+
+            </div>
+            
+            <div>
+                <h3>Budget in Dollars </h3>
+                <div class="dollarOutputs rounded" >
+                    <p id="travelDollar_Output"></p>
+                </div>
+            </div>
+
+            <!-- Enter Actual amount spent on travel-->
+            <div>
+                <h3>Total Spent</h3>
+                <label for="travelSpent_UserInput">Enter amount spent this month: </label>
+                <div class="checkSpentResult">
+                    <input name="travelSpent_UserInput" type="number" id="travelSpent_UserInput" class="inputText rounded">
+                    <img src="media/bar.svg" alt="arrow showing either up or down or neutral" width="50" id="arrowImgTravel">
+                    <p id="aboveBelowTravel">Above or Below?</p>
+                </div>
+                
+                <input type="button" class="button" value="Check" onclick="checkSpent(travel)">
+                
+            </div>
+        </div>
+
+    <!----------------- ENTERTAINMENT ------------------->
+        <div class="category">
+            <!-- Enter budget % amount alloted on food-->
+            <div class="title"><h2>Entertainment</h2></div>
+            <div>
+                <h3>Budget in Percent</h3>
+                <label for="funPercent_UserInput">Enter percentage from 0 to 100:</label>
+                <input name="funPercent_UserInput" type="number" id="funPercent_UserInput" class="inputText rounded">
+                <input type="button" class="button" value="Calculate" onclick="percToDollar(fun)">
+                
+
+            </div>
+            
+            <div>
+                <h3>Budget in Dollars </h3>
+                <div class="dollarOutputs rounded" >
+                    <p id="funDollar_Output"></p>
+                </div>
+            </div>
+
+            <!-- Enter Actual amount spent on entertainment-->
+            <div>
+                <h3>Total Spent</h3>
+                <label for="funSpent_UserInput">Enter amount spent this month: </label>
+                <div class="checkSpentResult">
+                    <input name="funSpent_UserInput"  type="number" id="funSpent_UserInput" class="inputText rounded">
+                    <img src="media/bar.svg" alt="arrow showing either up or down or neutral" width="50" id="arrowImgFun">
+                    <p id="aboveBelowFun">Above or Below?</p>    
+                </div>
+                
+                <input type="button" class="button" value="Check" onclick="checkSpent(fun)">
+                
+            </div>
+        </div>
+
+
+
+        <!-- Calculate total of actual spent -->
+        <div class="section d-flex flex-column rounded justify-content-center align-items-center m-3 p-2">
+            <p>How much did you spend this month? </p>
+            <button class="button" onclick="updateSpentTotal()">Calculate</button>
+            <p id="monthlyActual_Label"> </p>
+        </div>
+
+        <!-- Calculate carry over to next month -->
+        <div class="section d-flex flex-column rounded justify-content-center align-items-center m-3 p-2">
+            <p>How much do you have for next month? </p>
+            <button class="button" onclick="updateCarryOver()">Calculate</button>
+            <p id="carryOver_Label"></p>
+        </div>
+
+
+        <script src="scripts/script.js"></script>
+    </div>
+</body>
+</html>

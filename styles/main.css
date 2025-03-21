@@ -1,0 +1,76 @@
+.container{
+    padding: 3rem;
+}
+
+.section{
+    background-color: rgb(154, 204, 204);
+}
+.section label{
+    font-size: 2em;
+    margin-right: 1rem;
+}
+.section p {
+    font-size: x-large;
+    height: 2rem;
+}
+.button{
+    transition: background-color;
+    transition-duration: .1s;
+}
+.button:active {
+    background-color: green;
+}
+
+.category {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.5fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 20px;
+    background-color: antiquewhite;
+    margin: 1rem;
+    padding: 1rem;
+}
+.category > div{
+    background-color: rgb(187, 209, 162);
+    margin: .5rem;
+    padding: .5rem;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputText{
+    width: 6rem;
+    border: none;
+    margin: 1rem;
+    padding: .5rem;
+}
+
+.dollarOutputs{
+    width: 10rem;
+    height: 5rem;
+    margin: 1.5rem;
+    border: 1px black solid;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(219, 234, 208);
+}
+.dollarOutputs p{
+    font-size: larger;
+}
+
+.checkSpentResult {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; 
+    grid-template-rows: 1fr; 
+}
+
+.checkSpentResult > * {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
